@@ -7,7 +7,13 @@ function choice(items) {
  *  Otherwise, returns undefined.
  */
 function remove(items, item) {
-    return items[items.indexOf(item)];
+    const idx = items.indexOf(item);
+
+    if (idx >= 0) {
+        const removedItem = items[idx];
+        items.splice(idx, 1);
+        return removedItem;
+    }
 }
 
 export { choice, remove }

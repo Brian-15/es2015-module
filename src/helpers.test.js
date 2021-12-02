@@ -12,10 +12,14 @@ describe('choice', () => {
 
 describe('remove', () => {
     test('removes item from list', () => {
-        expect(remove([1, 2, 3], 1)).toBe(1);
+        const items = [1, 2, 3];
+        expect(remove(items, 1)).toBe(1);
+        expect(items.length).toBe(2);
     });
 
     test('returns undefined if item to remove is not found', () => {
-        expect(remove([1, 2, 3], 4)).toBe(undefined);
+        const items = [1, 2, 3];
+        expect(remove(items, 4)).toBe(undefined);
+        expect(items.length).toBe(3);
     });
 });
